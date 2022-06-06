@@ -2,7 +2,7 @@
 
   <div class="flex items-center fitImage">
     <div>
-      <img src="../assets/images/pika.gif" class="fitImage" alt="image">
+      <img src="../assets/images/back13.jpeg" class="fitImage" alt="image">
     </div>
 
     <section class="max-w-xs m-auto">
@@ -22,10 +22,16 @@
           <label class="text-sm">Username</label><br>
           <input type="text" class="w-full p-2 bg-mid-grey text-sm border-none mt-1 outline-none borderBottom">
         </div>
+
         <div class="my-6">
-          <label class="text-sm">Password</label><br>
-          <input type="passworld" class="w-full p-2 bg-mid-grey text-sm border-none mt-1 outline-none borderBottom">
+          <div class="flex items-center justify-between">
+            <label class="text-sm mr-2">Password</label>
+            <img src="../assets/images/eye.png" @click="switchVisibility">
+          </div>
+          <input :type="passwordFieldType"
+            class="w-full p-2 bg-mid-grey text-sm border-none mt-1 outline-none borderBottom">
         </div>
+
         <div>
           <button
             class="mt-3 text-white bg-dark-green hover:bg-mid-green w-full p-2 text-center border-solid border-2 border-black text-sm shadowBox">Login</button>
@@ -47,13 +53,24 @@
       </form>
 
     </section>
-
   </div>
-
-
 </template>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      password: "",
+      passwordFieldType: "password"
+    };
+  },
+  methods: {
+    switchVisibility() {
+      this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+    }
+  }
+};
+</script>
 
 <style>
 .fitImage {
@@ -61,7 +78,7 @@
 }
 
 .borderBottom:focus {
-  border-bottom: dashed black 1.5px;
+  border-bottom: dashed black 2px;
 }
 
 .shadowBox {
