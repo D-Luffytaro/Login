@@ -1,11 +1,13 @@
 <template>
 
-  <div class="flex items-center fitImage">
+  <!-- Left Section -->
+  <div class="flex items-center h-screen">
     <div>
-      <img src="../assets/images/back13.jpeg" class="fitImage" alt="image">
+      <img src="../assets/images/back13.jpeg" class="max-w-5xl imgNone" alt="image">
     </div>
 
-    <section class="max-w-xs m-auto">
+    <!-- Right Section -->
+    <section class="maxWid m-auto">
 
       <!-- Headline -->
       <div>
@@ -73,8 +75,12 @@ export default {
 </script>
 
 <style>
-.fitImage {
-  height: 100vh;
+.maxWid {
+  max-width: 22.5rem;
+}
+
+form {
+  height: 28.5rem;
 }
 
 .borderBottom:focus {
@@ -134,5 +140,14 @@ export default {
 button:active {
   top: 3.1px;
   left: 3.1px;
+}
+
+/** Media Queries */
+
+@media only screen and (max-width: 1300px) {
+
+  .imgNone {
+    display: none;
+  }
 }
 </style>
