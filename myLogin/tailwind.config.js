@@ -9,10 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-green': '#22C993',
-        'mid-green': '#45D4A5',
-        'pastel-pnk': '#F69191',
-        'mid-yellow': '#FBD750',
+        'dark-green': '#7A99FF',
+        'mid-green': '#A3B8FF',
+        'pastel-pnk': '#F670BF',
+        'mid-yellow': '#FF9F6B',
         'mid-grey': '#F0F0F0',
       },
       boxShadow: {

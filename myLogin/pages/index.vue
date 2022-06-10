@@ -3,7 +3,7 @@
   <!-- Left Section -->
   <div class="flex items-center h-screen">
     <div>
-      <img src="../assets/images/back13.jpeg" class="max-w-5xl imgNone" alt="image">
+      <img src="../assets/images/pika.gif" class="max-w-5xl imgNone imgPad" alt="image">
     </div>
 
     <!-- Right Section -->
@@ -28,7 +28,7 @@
         <div class="my-6">
           <div class="flex items-center justify-between">
             <label class="text-sm mr-2">Password</label>
-            <img src="../assets/images/eye.png" @click="switchVisibility">
+            <img :src="test[isVisible]" @click="switchVisibility">
           </div>
           <input :type="passwordFieldType"
             class="w-full p-2 bg-mid-grey text-sm border-none mt-1 outline-none borderBottom">
@@ -42,10 +42,10 @@
         <!-- Extra Login -->
         <div class="flex mt-8 box">
           <button
-            class="flex justify-center items-center py-2 bg-pastel-pnk w-1/2 border-solid border-2 border-black hover:bg-[#FFBCBC] relative text-sm"><img
+            class="flex justify-center items-center py-2 bg-pastel-pnk w-1/2 border-solid border-2 border-black hover:bg-[#FB9DD4] relative text-sm"><img
               src="../assets/images/g.png" class="w-3 mr-2" alt="Logo Gmail">Gmail</button>
           <button
-            class="flex justify-center items-center bg-mid-yellow w-1/2 border-solid  border-y-2 border-r-2 border-black hover:bg-[#FFE274] text-sm relative">
+            class="flex justify-center items-center bg-mid-yellow w-1/2 border-solid  border-y-2 border-r-2 border-black hover:bg-[#FFB590] text-sm relative">
             <img src="../assets/images/facebook.png" class="w-3 bg-white mr-2" alt="Logo Facebook"> Facebook</button>
         </div>
 
@@ -59,9 +59,12 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
+      test : [require("../assets/images/eye.png"), require("../assets/images/eye-close.png")],
+      isVisible : 0,
       password: "",
       passwordFieldType: "password"
     };
@@ -69,12 +72,18 @@ export default {
   methods: {
     switchVisibility() {
       this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+      this.isVisible = this.isVisible === 0 ? 1 : 0;
     }
   }
 };
 </script>
 
 <style>
+.imgPad {
+  padding: 4.6rem 0rem;
+  background-color: #7A99FF;
+}
+
 .maxWid {
   max-width: 22.5rem;
 }
